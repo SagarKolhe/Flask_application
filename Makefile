@@ -16,6 +16,7 @@ create:
 docker_push: push
 	docker logout
 	docker login -u 16081998 -p Neeta@1983
+	docker image tag ${DOCKER_IMAGE_NAME}:${TAG} ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${TAG}
 	docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${TAG}
 	@echo "----------------- successfully pushed docker image to the repository  -----------"
 
